@@ -43,13 +43,53 @@ describe('DisplayHouses', () => {
     expect(window.fetch).toHaveBeenCalledWith('mocked fetch houses')
   })
 
-  it('fetchAndCleanCards should dispatch the action addHouses', () => {
+  it('fetchAndCleanCards should dispatch the action addHouses', async () => {
     mockAddHouses = jest.fn()
+    renderedComponent = shallow(
+      <DisplayHouses 
+        addHouses={ mockAddHouses }
+        addMembersToHouse={ mockAddMembersToHouse }
+        houses={ mockCleanedHouses }
+        />
+    )
 
     expect(mockAddHouses).not.toHaveBeenCalled()
 
     renderedComponent.instance().fetchAndCleanCards()
 
-    expect(mockAddHouses).toHaveBeenCalledWith({})
+    expect(await mockAddHouses).toHaveBeenCalledWith(mockCleanedHouses)
   })
+
+  it('getSwornMembers should call the fetch in fetchSwornMembers', () => {
+    renderedComponent = shallow(
+      <DisplayHouses 
+        addHouses={ mockAddHouses }
+        addMembersToHouse={ mockAddMembersToHouse }
+        houses={ [] }
+        />
+    )
+
+    expect(window.fetch).not.toHaveBeenLastCalledWith('mocked fetch sworn members')
+
+    renderedComponent.instance().getSwornMembers()
+
+    expect(window.fetch).toHaveBeenLastCalledWith('mocked fetch sworn members')
+  })
+
+  it('getSwornMembers should dispatch the addMembersToHouse action', async () => {
+    renderedComponent = shallow(
+      <DisplayHouses 
+        addHouses={ mockAddHouses }
+        addMembersToHouse={ mockAddMembersToHouse }
+        houses={ [] }
+        />
+    )
+
+    expect(mockAddMembersToHouse).not.toHaveBeenCalled()
+
+    renderedComponent.instance().getSwornMembers()
+
+    expect(await mockAddMembersToHouse).toHaveBeenCalled()
+  })
+
 })

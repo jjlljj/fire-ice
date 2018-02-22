@@ -11,5 +11,6 @@ export const cleanHouses = () => {
 }
 
 export const fetchSwornMembers = () => {
+  fetch('mocked fetch sworn members')
   return "Allyria Dayne, Allyria Dayne, Allyria Dayne"
 }
