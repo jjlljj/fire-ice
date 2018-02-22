@@ -15,4 +15,11 @@ describe('Card', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 
+  it('should match snapshot when passed house members', () => {
+    const houseWithMembers = { ...mockCleanedHouse, members: "Charlie, Dee, Dennis, Mac" }
+
+    renderedComponent = shallow(<Card house={ houseWithMembers }/>)
+    expect(renderedComponent).toMatchSnapshot()
+  })
+
 })
