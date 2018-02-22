@@ -1,7 +1,7 @@
 export const mockMemberUrls = [
   'https://www.anapioficeandfire.com/api/characters/80',
   'https://www.anapioficeandfire.com/api/characters/142',
-  'https://www.anapioficeandfire.com/api/characters/151'
+'https://www.anapioficeandfire.com/api/characters/151'
 ]
 
 export const mockMember = {

@@ -13,7 +13,7 @@ export class DisplayHouses extends Component {
     try {
       this.fetchAndCleanCards()
     }
-    catch (err) {
+    catch(err) {
       console.log(err)
     }
   }
@@ -26,9 +26,14 @@ export class DisplayHouses extends Component {
 
   getSwornMembers = async (swornMembers, members, houseName ) => {
 
-    const memberNames = !members && await fetchSwornMembers(swornMembers) 
+    try {
+      const memberNames = !members && await fetchSwornMembers(swornMembers) 
 
-    !members && this.props.addMembersToHouse(memberNames, houseName)     
+      !members && this.props.addMembersToHouse(memberNames, houseName)     
+    }
+    catch(err) {
+      console.log(err)
+    }
   }
 
   renderHouseCards = () => {
