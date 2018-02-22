@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './DisplayHouses.css'
 import { connect } from 'react-redux'
+import { shape, func, string, arrayOf } from 'prop-types'
 import { fetchHouses, cleanHouses, fetchSwornMembers } from '../../dataHelper/dataHelper'
 import { addHouses, addMembersToHouse } from '../../actions/index'
 import Card from '../../components/Card/Card'
@@ -65,6 +66,22 @@ export class DisplayHouses extends Component {
     )
   }
 
+}
+
+DisplayHouses.propTypes = {
+  houses: arrayOf(shape({
+    Name: string,
+      Founded: string,
+      Seats: string,
+      Titles: string,
+      CoatOfArms: string,
+      AncestralWeapons: string,
+      swornMembers: arrayOf(string),
+      members: string
+    }
+  )),
+  addHouses: func.isRequired,
+  addMembersToHouse: func.isRequired
 }
 
 const mapStateToProps = ({ houses }) => ({

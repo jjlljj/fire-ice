@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { fetchApi, fetchHouses, cleanHouses, cleanHouse, arrayToString, fetchSwornMembers } from './dataHelper'
 import { mockMemberUrls, mockMember, mockHouses, mockCleanedHouse, mockCleanedHouses } from '../__mocks__/mockData'
 
