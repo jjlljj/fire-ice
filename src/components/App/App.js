@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import DisplayHouses from '../../containers/DisplayHouses/DisplayHouses'
 
-class App extends Component {
+export class App extends Component {
 
   render() {
     return (
