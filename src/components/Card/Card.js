@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes, { shape, func, string } from 'prop-types'
 import './Card.css'
 
 export const Card = ({ house, handleSworn }) => {
@@ -23,5 +24,6 @@ export const Card = ({ house, handleSworn }) => {
     </div>
   )
 }
+
 
 export default Card

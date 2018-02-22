@@ -4,6 +4,37 @@ export const mockMemberUrls = [
   'https://www.anapioficeandfire.com/api/characters/151'
 ]
 
+export const mockMember = {
+  "url": "https://www.anapioficeandfire.com/api/characters/80",
+  "name": "Allyria Dayne",
+"gender": "Female",
+"culture": "",
+"born": "",
+"died": "",
+"titles": [
+""
+],
+"aliases": [
+""
+],
+"father": "",
+"mother": "",
+"spouse": "",
+"allegiances": [
+"https://www.anapioficeandfire.com/api/houses/99"
+],
+"books": [
+"https://www.anapioficeandfire.com/api/books/3"
+],
+"povBooks": [],
+"tvSeries": [
+""
+],
+"playedBy": [
+""
+]
+}
+
 export const mockUpdatedHouses = [ { Name: 'House Corbray of Heart\'s Home',
         Founded: '',
         Seats: 'Heart\'s Home',
