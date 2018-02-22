@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-family: Androgyne;
-  /*background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');*/
+  background-image: url('./assets/snow1.png'), url('./assets/snow2.png'), url('./assets/snow3.png');
   position: absolute;
   left: 0;
   top: 0;
