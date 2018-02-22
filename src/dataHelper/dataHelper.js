@@ -33,5 +33,5 @@ export const cleanHouse = ({ name, founded, seats, titles, coatOfArms,  ancestra
 }
 
 export const arrayToString = array => {
-  return array.join(" ")
+  return array.join(", ")
 }

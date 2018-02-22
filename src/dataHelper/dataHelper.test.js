@@ -47,7 +47,7 @@ describe('dataHelper', () => {
 
     it('should return the expected array of cleaned house objects', () => {
       const result = cleanHouses(mockHouses)
-
+      
       expect(result).toEqual(mockCleanedHouses)
     })
   })
@@ -64,7 +64,7 @@ describe('dataHelper', () => {
 
     it('should take an array and return a string', () => {
       const array =[ 'my', 'name', 'is', 'james']
-      const expected = 'my name is james'
+      const expected = 'my, name, is, james'
       expect(arrayToString(array)).toEqual(expected)
     })
   })
