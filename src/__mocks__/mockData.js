@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const mockMemberUrls = [
   'https://www.anapioficeandfire.com/api/characters/80',
   'https://www.anapioficeandfire.com/api/characters/142',

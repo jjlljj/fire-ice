@@ -4,12 +4,11 @@ export const fetchApi = async (url) => {
 
     if (response.status < 300 ) {
       return await response.json()
-    }
-    else {
+    } else {
       throw new Error('unable to fetch data')
     }
-  } catch(err) {
-    throw(err)
+  } catch (error) {
+    throw (error)
   }
 }
 
@@ -22,7 +21,16 @@ export const cleanHouses = housesArray => {
   return housesArray.map(house => cleanHouse(house))
 }
 
-export const cleanHouse = ({ name, founded, seats, titles, coatOfArms,  ancestralWeapons, words, swornMembers }) => {
+export const cleanHouse = ({ 
+  name, 
+  founded, 
+  seats, 
+  titles, 
+  coatOfArms,  
+  ancestralWeapons, 
+  words, 
+  swornMembers }) => {
+  
   return {
     Name: name,
     Founded: founded,

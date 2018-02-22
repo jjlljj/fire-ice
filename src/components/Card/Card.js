@@ -3,7 +3,17 @@ import { shape, func, string, arrayOf } from 'prop-types'
 import './Card.css'
 
 export const Card = ({ house, handleSworn }) => {
-  const { Name, Founded, Seats, Titles, CoatOfArms, AncestralWeapons, swornMembers, members } = house
+  const { 
+    Name, 
+    Founded, 
+    Seats, 
+    Titles, 
+    CoatOfArms, 
+    AncestralWeapons, 
+    swornMembers, 
+    members 
+  } = house
+  
   const renderMembers = () => (<li>Sworn Members: { members } </li>)
 
   return (
