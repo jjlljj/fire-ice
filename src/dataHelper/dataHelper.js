@@ -13,3 +13,25 @@ export const fetchHouses = async () => {
     throw(err)
   }
 }
+
+export const cleanHouses = housesArray => {
+  return housesArray.map(house => cleanHouse(house))
+}
+
+export const cleanHouse = ({ name, founded, seats, titles, coatOfArms,  ancestralWeapons, words, swornMembers }) => {
+  return {
+    Name: name,
+    Founded: founded,
+    Seats: arrayToString(seats),
+    Titles: arrayToString(titles),
+    CoatOfArms: coatOfArms,
+    AncestralWeapons: arrayToString(ancestralWeapons),
+    Words: words, 
+    swornMembers
+  }
+
+}
+
+export const arrayToString = array => {
+  return array.join(", ")
+}
