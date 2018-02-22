@@ -3,7 +3,6 @@ import PropTypes, { shape, func, string } from 'prop-types'
 import logo from './logo.svg'
 import './App.css'
 import { connect } from 'react-redux'
-
 import DisplayHouses from '../../containers/DisplayHouses/DisplayHouses'
 
 export class App extends Component {
@@ -27,11 +26,11 @@ App.propTypes = {
   
 }
 
-const mapStateToProps = ( state ) => ({  
-
+const mapStateToProps = ( { houses } ) => ({  
+  houses
 })
 
 const mapDispatchToProps = dispatch => ({ 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps)(App)
