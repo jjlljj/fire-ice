@@ -4,7 +4,7 @@ import './Card.css'
 export const Card = ({ house }) => {
   const { Name, Founded, Seats, Titles, CoatOfArms, AncestralWeapons } = house
   return (
-    <div>
+    <div className="Card">
       <h2>{ Name }</h2>
       <h3>Founded: {Founded}</h3>
       <ul>

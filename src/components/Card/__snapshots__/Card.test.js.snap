@@ -67,6 +67,7 @@ ShallowWrapper {
           </li>
 </ul>,
       ],
+      "className": "Card",
     },
     "ref": null,
     "rendered": Array [
@@ -235,6 +236,7 @@ ShallowWrapper {
             </li>
 </ul>,
         ],
+        "className": "Card",
       },
       "ref": null,
       "rendered": Array [
