@@ -25,7 +25,7 @@ describe('DisplayHouses', () => {
     )
   })
 
-  it('should match snapshot', () => {
+  it('should match snapshot when houses are passed to it', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 
@@ -90,6 +90,18 @@ describe('DisplayHouses', () => {
     renderedComponent.instance().getSwornMembers()
 
     expect(await mockAddMembersToHouse).toHaveBeenCalled()
+  })
+
+  it('should match snapshot and render Wolf when no houses are passed to it', () => {
+    renderedComponent = shallow(
+      <DisplayHouses 
+        addHouses={ mockAddHouses }
+        addMembersToHouse={ mockAddMembersToHouse }
+        houses={ [] }
+        />
+    )
+
+    expect(renderedComponent).toMatchSnapshot()
   })
 
 })
