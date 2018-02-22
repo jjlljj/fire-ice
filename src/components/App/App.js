@@ -4,6 +4,9 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { fakeAction } from '../../actions';
+
+import DisplayHouses from '../../containers/DisplayHouses/DisplayHouses'
+
 class App extends Component {
 
   render() {
@@ -14,9 +17,8 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
           
         </div>
-        <div className='Display-info'>
         
-        </div>
+        <DisplayHouses />
       </div>
     );
   }

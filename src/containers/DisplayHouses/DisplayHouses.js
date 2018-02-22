@@ -7,11 +7,22 @@ export class DisplayHouses extends Component {
 
   componentDidMount = async () => {
     try {
-
-    const houses = await fetchHouses()
+      const houses = await fetchHouses()
+      console.log(houses)
+    }
+    catch (err) {
+      console.log(err)
     }
 
 
+  }
+
+  render() {
+    return (
+      <div className='Display-info'>
+
+      </div>
+    )
   }
 
 }
@@ -24,4 +35,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayHouses)
+export default connect(undefined, undefined)(DisplayHouses)
