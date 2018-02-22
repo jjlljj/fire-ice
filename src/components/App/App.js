@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
-import logo from './logo.svg';
-import './App.css';
-import { connect } from 'react-redux';
-import { fakeAction } from '../../actions';
+import React, { Component } from 'react'
+import PropTypes, { shape, func, string } from 'prop-types'
+import logo from './logo.svg'
+import './App.css'
+import { connect } from 'react-redux'
 
 import DisplayHouses from '../../containers/DisplayHouses/DisplayHouses'
 
@@ -20,17 +19,19 @@ class App extends Component {
         
         <DisplayHouses />
       </div>
-    );
+    )
   }
 }
 
 App.propTypes = {
-  fake: shape({ fake: string }),
-  fakeAction: func.isRequired
-};
+  
+}
 
-const mapStateToProps = ({ fake }) => ({ fake });
-const mapDispatchToProps = dispatch => ({ fakeAction:
-  () => dispatch(fakeAction())
-});
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+const mapStateToProps = ( state ) => ({  
+
+})
+
+const mapDispatchToProps = dispatch => ({ 
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
