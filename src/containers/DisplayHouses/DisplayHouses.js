@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './DisplayHouses.css'
 import { connect } from 'react-redux'
-import { fetchHouses, cleanHouses } from '../../dataHelper/dataHelper'
-import { addHouses } from '../../actions/index'
+import { fetchHouses, cleanHouses, fetchSwornMembers } from '../../dataHelper/dataHelper'
+import { addHouses, addMembersToHouse } from '../../actions/index'
 import Card from '../../components/Card/Card'
 const wolf = require('./assets/wolf.gif')
 
@@ -24,9 +24,21 @@ export class DisplayHouses extends Component {
     this.props.addHouses(cleanedHouses)
   }
 
+  getSwornMembers = async (swornMembers, members, houseName ) => {
+
+    const memberNames = !members && await fetchSwornMembers(swornMembers) 
+
+    !members && this.props.addMembersToHouse(memberNames, houseName)     
+  }
+
   renderHouseCards = () => {
     const { houses } = this.props
-    return houses.map(house => ( <Card house={house } /> ))
+    return houses.map(house => ( 
+      <Card 
+        house={house } 
+        handleSworn={ this.getSwornMembers } 
+        key={ house.Name }/> 
+    ))
   }
 
   renderLoadingWolf = () => {
@@ -55,7 +67,8 @@ const mapStateToProps = ({ houses }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addHouses: houses => dispatch(addHouses(houses))
+  addHouses: houses => dispatch(addHouses(houses)),
+  addMembersToHouse: (members, houseName) => dispatch(addMembersToHouse(members, houseName))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayHouses)
