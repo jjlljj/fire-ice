@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes, { shape, func, string } from 'prop-types'
+import { shape, func, string } from 'prop-types'
 import './Card.css'
 
 export const Card = ({ house, handleSworn }) => {
@@ -25,5 +25,10 @@ export const Card = ({ house, handleSworn }) => {
   )
 }
 
+Card.propTypes = {
+  house: shape({
+    
+  })
+}
 
 export default Card

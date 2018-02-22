@@ -5,7 +5,6 @@ export const fetchHouses = () => {
   return mockHouses
 }
 
-
 export const cleanHouses = () => {
   return mockCleanedHouses
 }
