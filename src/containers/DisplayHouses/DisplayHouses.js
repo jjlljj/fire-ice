@@ -25,7 +25,7 @@ export class DisplayHouses extends Component {
 
   render() {
     return (
-      <div className='Display-info'>
+      <div className='Display-info Container'>
         { this.renderHouseCards() }
       </div>
     )
