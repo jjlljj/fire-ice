@@ -7,7 +7,6 @@ describe('App', () => {
   let renderedComponent
 
   beforeEach(() => {
-
     renderedComponent = shallow(<App />)
   })
 

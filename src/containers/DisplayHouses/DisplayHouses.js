@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import './DisplayHouses.css';
-import { connect } from 'react-redux';
-import { fetchHouses, cleanHouses } from '../../dataHelper/dataHelper';
+import React, { Component } from 'react'
+import './DisplayHouses.css'
+import { connect } from 'react-redux'
+import { fetchHouses, cleanHouses } from '../../dataHelper/dataHelper'
 import { addHouses } from '../../actions/index'
+import Card from '../../components/Card/Card'
 
 export class DisplayHouses extends Component {
 
@@ -17,10 +18,15 @@ export class DisplayHouses extends Component {
     }
   }
 
+  renderHouseCards = () => {
+    const { houses } = this.props
+    return houses.map(house => ( <Card house={house } /> ))
+  }
+
   render() {
     return (
       <div className='Display-info'>
-
+        { this.renderHouseCards() }
       </div>
     )
   }

@@ -24,8 +24,8 @@ export const cleanHouse = ({ name, founded, seats, titles, coatOfArms,  ancestra
     Founded: founded,
     Seats: arrayToString(seats),
     Titles: arrayToString(titles),
-    "Coat Of Arms": coatOfArms,
-    "Ancestral Weapons": arrayToString(ancestralWeapons),
+    CoatOfArms: coatOfArms,
+    AncestralWeapons: arrayToString(ancestralWeapons),
     Words: words, 
     swornMembers
   }
