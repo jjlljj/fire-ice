@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { housesReducer } from './housesReducer'
 import * as actions from '../actions/index'
-import { mockHouses } from '../__mocks__/mockData'
+import { mockHouses, mockUpdatedHouses, mockCleanedHouses, mockMemberUrls } from '../__mocks__/mockData'
 
 describe('housesReducer', () => {
 
@@ -14,5 +14,11 @@ describe('housesReducer', () => {
     const action = actions.addHouses(mockHouses)
 
     expect(housesReducer(undefined, action)).toEqual(expected)
+  })
+
+  it('ADD_MEMBERS_TO_HOUSE should return the expected array of houses, with members added to the house', () => {
+    const action = actions.addMembersToHouse(mockMemberUrls, "House Dayne of Starfall")
+    
+    expect(housesReducer(mockCleanedHouses, action)).toEqual(mockUpdatedHouses)
   })
 })

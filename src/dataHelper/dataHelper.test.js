@@ -36,7 +36,7 @@ describe('dataHelper', () => {
       }))
 
       const response = fetchHouses()
-      const expected = Error('unable to fetch house data')
+      const expected = Error('unable to fetch data')
 
       expect(response).rejects.toEqual(expected)
     })
