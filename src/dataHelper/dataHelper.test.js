@@ -119,21 +119,35 @@ describe('dataHelper', () => {
     })
 
     it('should call fetch with the expected params', () => {
-      const expected1 = mockMemberUrls[0]
-      const expected2 = mockMemberUrls[1]
-      const expected3 = mockMemberUrls[2]
-     
+      const expected1 = [mockMemberUrls[0]]
+      const expected2 = [mockMemberUrls[1]]
+      const expected3 = [mockMemberUrls[2]]
       
       expect(window.fetch).not.toHaveBeenCalled()
 
       fetchSwornMembers(mockMemberUrls)
 
-      expect(window.fetch).toHaveBeenCalledWith(expected3, expected2, ex)
+      expect(window.fetch.mock.calls).toEqual([expected1, expected2, expected3])
     })
 
-    it.skip('should return the expected string of members', () => {
-     
+    it('should return the expected string of members', () => {
 
+      const expected = "Allyria Dayne, Allyria Dayne, Allyria Dayne"
+      const result = fetchSwornMembers(mockMemberUrls)
+     
+      expect(result).resolves.toEqual(expected)
+    })
+
+    it('should handle throw errors if the response is not okay', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 500
+      }))
+
+      const response = fetchSwornMembers(mockMemberUrls)
+      const expected = Error('unable to fetch data')
+
+      expect(response).rejects.toEqual(expected)
+      
     })
 
   })
